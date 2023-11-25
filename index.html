@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>最初の2文字コピー</title>
+  <title>スパムフィルター解析用</title>
 </head>
 <body>
 
-  <input type="text" id="inputString" placeholder="文字列を入力">
-  <button onclick="truncateAndCopy()">切り詰めてコピー</button>
+  <input type="text" id="inputString" placeholder="ユニコを入力">
+  <button onclick="truncateAndCopy()">解析してコピー</button>
 
-  <p id="result"></p>
 
   <script>
     function truncateAndCopy() {
@@ -19,10 +18,7 @@
 
       // 最初の2つの文字を残す
       var truncatedString = inputString.substring(0, 2);
-
-      // 結果を表示
-      document.getElementById('result').innerHTML = '切り詰めた文字列: ' + truncatedString;
-
+      
       // コピーする
       copyToClipboard(truncatedString);
     }
