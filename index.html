@@ -10,6 +10,7 @@
   <input type="text" id="inputString" placeholder="ユニコを入力">
   <button onclick="truncateAndCopy()">解析してコピー</button>
 
+  <p id="result"></p>
 
   <script>
     function truncateAndCopy() {
@@ -18,6 +19,9 @@
 
       // 最初の2つの文字を残す
       var truncatedString = inputString.substring(0, 2);
+      
+      // 結果を表示
+      document.getElementById('result').innerHTML = 'コピー完了';
       
       // コピーする
       copyToClipboard(truncatedString);
