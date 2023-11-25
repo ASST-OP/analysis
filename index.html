@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicates</title>
+</head>
+<body>
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString">
+    <button onclick="removeDuplicates()">Remove Duplicates</button>
+    <p id="result"></p>
+
+    <script>
+        function removeDuplicates() {
+            // ユーザーが入力した文字列を取得
+            var inputString = document.getElementById('inputString').value;
+
+            // 重複した文字を1つだけ残して消す処理
+            var resultString = "";
+            for (var i = 0; i < inputString.length; i++) {
+                if (resultString.indexOf(inputString[i]) === -1) {
+                    resultString += inputString[i];
+                }
+            }
+
+            // 結果を表示
+            document.getElementById('result').textContent = "Result: " + resultString;
+        }
+    </script>
+</body>
+</html>
