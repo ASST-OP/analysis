@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove Duplicates</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>部分文字列の例</title>
 </head>
 <body>
-    <label for="inputString">Enter a string:</label>
-    <input type="text" id="inputString">
-    <button onclick="removeDuplicates()">Remove Duplicates</button>
-    <p id="result"></p>
 
-    <script>
-        function removeDuplicates() {
-            // ユーザーが入力した文字列を取得
-            var inputString = document.getElementById('inputString').value;
+  <input type="text" id="inputString" placeholder="文字列を入力">
+  <button onclick="truncateString()">切り詰める</button>
 
-            // 重複した文字を1つだけ残して消す処理
-            var resultString = "";
-            for (var i = 0; i < inputString.length; i++) {
-                if (resultString.indexOf(inputString[i]) === -1) {
-                    resultString += inputString[i];
-                }
-            }
+  <p id="result"></p>
 
-            // 結果を表示
-            document.getElementById('result').textContent = "Result: " + resultString;
-        }
-    </script>
+  <script>
+    function truncateString() {
+      // 入力された文字列を取得
+      var inputString = document.getElementById('inputString').value;
+
+      // 最初の2つの文字を残す
+      var truncatedString = inputString.substring(0, 2);
+
+      // 結果を表示
+      document.getElementById('result').innerHTML = '切り詰めた文字列: ' + truncatedString;
+    }
+  </script>
+
 </body>
 </html>
