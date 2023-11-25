@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>部分文字列の例</title>
+  <title>最初の2文字コピー</title>
 </head>
 <body>
 
   <input type="text" id="inputString" placeholder="文字列を入力">
-  <button onclick="truncateString()">切り詰める</button>
+  <button onclick="truncateAndCopy()">切り詰めてコピー</button>
 
   <p id="result"></p>
 
   <script>
-    function truncateString() {
+    function truncateAndCopy() {
       // 入力された文字列を取得
       var inputString = document.getElementById('inputString').value;
 
@@ -22,6 +22,18 @@
 
       // 結果を表示
       document.getElementById('result').innerHTML = '切り詰めた文字列: ' + truncatedString;
+
+      // コピーする
+      copyToClipboard(truncatedString);
+    }
+
+    function copyToClipboard(text) {
+      var input = document.createElement('input');
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
     }
   </script>
 
